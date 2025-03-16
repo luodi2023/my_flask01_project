@@ -1,0 +1,26 @@
+{% extends 'bootstrap/base.html' %}
+{% block title%}My - Flask{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ column_role }}</th>
+                <th scope="col">{{ column_user }}</th>
+                <th scope="col">role_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, role_name, user_name, role_id in tables %}
+            <tr>
+                <th scope="row">{{ i }}</th>
+                <td class="bg-primary">{{ role_name }}</td>
+                <td class="bg-warning">{{ user_name }}</td>
+                <td class="bg-danger"> {{ role_id }}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+{% endblock %}
